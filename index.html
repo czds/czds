@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>WebPiano</title>
-    <script src="./vue.js"></script>
+    <!-- <script src="https://vuejs.org/js/vue.min.js"></script> -->
     <style>
         :root {
             font-size: 18px;
@@ -32,13 +32,13 @@
         .white .row span {
             display: inline-block;
             width: 30px;
-            background-color: #eee;
+            background-color: #eeedda;
         }
 
         .black .row span {
             display: inline-block;
             width: 30px;
-            background-color: #aaa;
+            background-color: #bbb;
         }
 
         .container {
@@ -59,7 +59,7 @@
             height: 4rem;
             border: 1px solid #333;
             border-right: none;
-            background-color: #e9e7cf;
+            background-color: #eeedda;
             box-sizing: border-box;
             border-radius: 0 0 4px 4px;
         }
@@ -72,7 +72,7 @@
             position: absolute;
             width: 0.7rem;
             height: 2.6rem;
-            background-color: #666;
+            background-color: #888;
             border: 1px solid #000;
             border-radius: 0 0 4px 4px;
         }
@@ -224,13 +224,18 @@
         h1 {
             text-align: center;
         }
+
+        .desc {
+            text-align: center;
+            margin-bottom: 24px;
+        }
     </style>
 </head>
 
 <body>
     <h1>WebPiano</h1>
     <div class="desc">
-        在浏览器页面按下键盘对应键即可听到相应钢琴音，测试中...
+        按下键盘对应键即可听到相应钢琴音，测试中...
     </div>
     <div class="white">
         <div class="row">
@@ -423,6 +428,97 @@
             <span class="b-35">&nbsp;</span>
             <span class="b-36">&nbsp;</span>
         </div>
+    </div>
+
+    <div class="sound">
+        <audio src="./sound/1.mp3" preload="auto"></audio>
+        <audio src="./sound/2.mp3" preload="auto"></audio>
+        <audio src="./sound/3.mp3" preload="auto"></audio>
+        <audio src="./sound/4.mp3" preload="auto"></audio>
+        <audio src="./sound/5.mp3" preload="auto"></audio>
+        <audio src="./sound/6.mp3" preload="auto"></audio>
+        <audio src="./sound/7.mp3" preload="auto"></audio>
+        <audio src="./sound/8.mp3" preload="auto"></audio>
+        <audio src="./sound/9.mp3" preload="auto"></audio>
+        <audio src="./sound/10.mp3" preload="auto"></audio>
+        <audio src="./sound/11.mp3" preload="auto"></audio>
+        <audio src="./sound/12.mp3" preload="auto"></audio>
+        <audio src="./sound/13.mp3" preload="auto"></audio>
+        <audio src="./sound/14.mp3" preload="auto"></audio>
+        <audio src="./sound/15.mp3" preload="auto"></audio>
+        <audio src="./sound/16.mp3" preload="auto"></audio>
+        <audio src="./sound/17.mp3" preload="auto"></audio>
+        <audio src="./sound/18.mp3" preload="auto"></audio>
+        <audio src="./sound/19.mp3" preload="auto"></audio>
+        <audio src="./sound/20.mp3" preload="auto"></audio>
+        <audio src="./sound/21.mp3" preload="auto"></audio>
+        <audio src="./sound/22.mp3" preload="auto"></audio>
+        <audio src="./sound/23.mp3" preload="auto"></audio>
+        <audio src="./sound/24.mp3" preload="auto"></audio>
+        <audio src="./sound/25.mp3" preload="auto"></audio>
+        <audio src="./sound/26.mp3" preload="auto"></audio>
+        <audio src="./sound/27.mp3" preload="auto"></audio>
+        <audio src="./sound/28.mp3" preload="auto"></audio>
+        <audio src="./sound/29.mp3" preload="auto"></audio>
+        <audio src="./sound/30.mp3" preload="auto"></audio>
+        <audio src="./sound/31.mp3" preload="auto"></audio>
+        <audio src="./sound/32.mp3" preload="auto"></audio>
+        <audio src="./sound/33.mp3" preload="auto"></audio>
+        <audio src="./sound/34.mp3" preload="auto"></audio>
+        <audio src="./sound/35.mp3" preload="auto"></audio>
+        <audio src="./sound/36.mp3" preload="auto"></audio>
+        <audio src="./sound/37.mp3" preload="auto"></audio>
+        <audio src="./sound/38.mp3" preload="auto"></audio>
+        <audio src="./sound/39.mp3" preload="auto"></audio>
+        <audio src="./sound/40.mp3" preload="auto"></audio>
+        <audio src="./sound/41.mp3" preload="auto"></audio>
+        <audio src="./sound/42.mp3" preload="auto"></audio>
+        <audio src="./sound/43.mp3" preload="auto"></audio>
+        <audio src="./sound/44.mp3" preload="auto"></audio>
+        <audio src="./sound/45.mp3" preload="auto"></audio>
+        <audio src="./sound/46.mp3" preload="auto"></audio>
+        <audio src="./sound/47.mp3" preload="auto"></audio>
+        <audio src="./sound/48.mp3" preload="auto"></audio>
+        <audio src="./sound/49.mp3" preload="auto"></audio>
+        <audio src="./sound/50.mp3" preload="auto"></audio>
+        <audio src="./sound/51.mp3" preload="auto"></audio>
+        <audio src="./sound/52.mp3" preload="auto"></audio>
+        <audio src="./sound/53.mp3" preload="auto"></audio>
+        <audio src="./sound/54.mp3" preload="auto"></audio>
+        <audio src="./sound/55.mp3" preload="auto"></audio>
+        <audio src="./sound/56.mp3" preload="auto"></audio>
+        <audio src="./sound/57.mp3" preload="auto"></audio>
+        <audio src="./sound/58.mp3" preload="auto"></audio>
+        <audio src="./sound/59.mp3" preload="auto"></audio>
+        <audio src="./sound/60.mp3" preload="auto"></audio>
+        <audio src="./sound/61.mp3" preload="auto"></audio>
+        <audio src="./sound/62.mp3" preload="auto"></audio>
+        <audio src="./sound/63.mp3" preload="auto"></audio>
+        <audio src="./sound/64.mp3" preload="auto"></audio>
+        <audio src="./sound/65.mp3" preload="auto"></audio>
+        <audio src="./sound/66.mp3" preload="auto"></audio>
+        <audio src="./sound/67.mp3" preload="auto"></audio>
+        <audio src="./sound/68.mp3" preload="auto"></audio>
+        <audio src="./sound/69.mp3" preload="auto"></audio>
+        <audio src="./sound/70.mp3" preload="auto"></audio>
+        <audio src="./sound/71.mp3" preload="auto"></audio>
+        <audio src="./sound/72.mp3" preload="auto"></audio>
+        <audio src="./sound/73.mp3" preload="auto"></audio>
+        <audio src="./sound/74.mp3" preload="auto"></audio>
+        <audio src="./sound/75.mp3" preload="auto"></audio>
+        <audio src="./sound/76.mp3" preload="auto"></audio>
+        <audio src="./sound/77.mp3" preload="auto"></audio>
+        <audio src="./sound/78.mp3" preload="auto"></audio>
+        <audio src="./sound/79.mp3" preload="auto"></audio>
+        <audio src="./sound/80.mp3" preload="auto"></audio>
+        <audio src="./sound/81.mp3" preload="auto"></audio>
+        <audio src="./sound/82.mp3" preload="auto"></audio>
+        <audio src="./sound/83.mp3" preload="auto"></audio>
+        <audio src="./sound/84.mp3" preload="auto"></audio>
+        <audio src="./sound/85.mp3" preload="auto"></audio>
+        <audio src="./sound/86.mp3" preload="auto"></audio>
+        <audio src="./sound/87.mp3" preload="auto"></audio>
+        <audio src="./sound/88.mp3" preload="auto"></audio>
     </div>
 
     <script src="./main.js"></script>
