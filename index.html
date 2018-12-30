@@ -1,13 +1,431 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>WebPiano</title>
     <script src="./vue.js"></script>
+    <style>
+        :root {
+            font-size: 18px;
+            font-family: sans-serif;
+        }
+
+        body {
+            width: 56rem;
+        }
+
+        .white .row,
+        .black .row {
+            margin-top: 0.6rem;
+            text-align: center;
+            line-height: 3;
+            color: #333;
+        }
+
+        .black {
+            margin-top: 2rem;
+        }
+
+        .white .row span {
+            display: inline-block;
+            width: 30px;
+            background-color: #eee;
+        }
+
+        .black .row span {
+            display: inline-block;
+            width: 30px;
+            background-color: #aaa;
+        }
+
+        .container {
+            margin: 0 auto;
+        }
+
+        #piano {
+            width: 53rem;
+            position: relative;
+            text-align: left;
+            font-size: 0;
+            margin: 40px auto;
+        }
+
+        #piano span[class^=w-] {
+            display: inline-block;
+            width: 1rem;
+            height: 4rem;
+            border: 1px solid #333;
+            border-right: none;
+            background-color: #e9e7cf;
+            box-sizing: border-box;
+            border-radius: 0 0 4px 4px;
+        }
+
+        #piano span.w-52 {
+            border-right: 1px solid #333;
+        }
+
+        #piano span[class^=b-] {
+            position: absolute;
+            width: 0.7rem;
+            height: 2.6rem;
+            background-color: #666;
+            border: 1px solid #000;
+            border-radius: 0 0 4px 4px;
+        }
+
+        span.b-1 {
+            left: 0.6rem;
+        }
+
+        span.b-2 {
+            left: 2.6rem;
+        }
+
+        span.b-3 {
+            left: 3.6rem;
+        }
+
+        span.b-4 {
+            left: 5.6rem;
+        }
+
+        span.b-5 {
+            left: 6.6rem;
+        }
+
+        span.b-6 {
+            left: 7.6rem;
+        }
+
+        span.b-7 {
+            left: 9.6rem;
+        }
+
+        span.b-8 {
+            left: 10.6rem;
+        }
+
+        span.b-9 {
+            left: 12.6rem;
+        }
+
+        span.b-10 {
+            left: 13.6rem;
+        }
+
+        span.b-11 {
+            left: 14.6rem;
+        }
+
+        span.b-12 {
+            left: 16.6rem;
+        }
+
+        span.b-13 {
+            left: 17.6rem;
+        }
+
+        span.b-14 {
+            left: 19.6rem;
+        }
+
+        span.b-15 {
+            left: 20.6rem;
+        }
+
+        span.b-16 {
+            left: 21.6rem;
+        }
+
+        span.b-17 {
+            left: 23.6rem;
+        }
+
+        span.b-18 {
+            left: 24.6rem;
+        }
+
+        span.b-19 {
+            left: 26.6rem;
+        }
+
+        span.b-20 {
+            left: 27.6rem;
+        }
+
+        span.b-21 {
+            left: 28.6rem;
+        }
+
+        span.b-22 {
+            left: 30.6rem;
+        }
+
+        span.b-23 {
+            left: 31.6rem;
+        }
+
+        span.b-24 {
+            left: 33.6rem;
+        }
+
+        span.b-25 {
+            left: 34.6rem;
+        }
+
+        span.b-26 {
+            left: 35.6rem;
+        }
+
+        span.b-27 {
+            left: 37.6rem;
+        }
+
+        span.b-28 {
+            left: 38.6rem;
+        }
+
+        span.b-29 {
+            left: 40.6rem;
+        }
+
+        span.b-30 {
+            left: 41.6rem;
+        }
+
+        span.b-31 {
+            left: 42.6rem;
+        }
+
+        span.b-32 {
+            left: 44.6rem;
+        }
+
+        span.b-33 {
+            left: 45.6rem;
+        }
+
+        span.b-34 {
+            left: 47.6rem;
+        }
+
+        span.b-35 {
+            left: 48.6rem;
+        }
+
+        span.b-36 {
+            left: 49.6rem;
+        }
+
+        h1 {
+            text-align: center;
+        }
+    </style>
 </head>
+
 <body>
-    hahaha
+    <h1>WebPiano</h1>
+    <div class="desc">
+        在浏览器页面按下键盘对应键即可听到相应钢琴音，测试中...
+    </div>
+    <div class="white">
+        <div class="row">
+            <span id="A">A</span>
+            <span id="B">B</span>
+            <span id="C">C</span>
+            <span id="D">D</span>
+            <span id="E">E</span>
+            <span id="F">F</span>
+            <span id="G">G</span>
+            <span id="H">H</span>
+            <span id="I">I</span>
+            <span id="J">J</span>
+            <span id="K">K</span>
+            <span id="L">L</span>
+            <span id="M">M</span>
+            <span id="N">N</span>
+            <span id="O">O</span>
+            <span id="P">P</span>
+            <span id="Q">Q</span>
+            <span id="R">R</span>
+            <span id="S">S</span>
+            <span id="T">T</span>
+            <span id="U">U</span>
+            <span id="V">V</span>
+            <span id="W">W</span>
+            <span id="X">X</span>
+            <span id="Y">Y</span>
+            <span id="Z">Z</span>
+        </div>
+        <div class="row">
+            <span id="a">a</span>
+            <span id="b">b</span>
+            <span id="c">c</span>
+            <span id="d">d</span>
+            <span id="e">e</span>
+            <span id="f">f</span>
+            <span id="g">g</span>
+            <span id="h">h</span>
+            <span id="i">i</span>
+            <span id="j">j</span>
+            <span id="k">k</span>
+            <span id="l">l</span>
+            <span id="m">m</span>
+            <span id="n">n</span>
+            <span id="o">o</span>
+            <span id="p">p</span>
+            <span id="q">q</span>
+            <span id="r">r</span>
+            <span id="s">s</span>
+            <span id="t">t</span>
+            <span id="u">u</span>
+            <span id="v">v</span>
+            <span id="w">w</span>
+            <span id="x">x</span>
+            <span id="y">y</span>
+            <span id="z">z</span>
+        </div>
+    </div>
+    <div class="black">
+        <div class="row">
+            <span id="b_1">!</span>
+            <span id="b_2">@</span>
+            <span id="b_3">#</span>
+            <span id="b_4">$</span>
+            <span id="b_5">%</span>
+            <span id="b_6">^</span>
+            <span id="b_7">&</span>
+            <span id="b_8">*</span>
+            <span id="b_9">(</span>
+            <span id="b_0">)</span>
+            <span id="b_10">{</span>
+            <span id="b_11">}</span>
+            <span id="b_12">|</span>
+            <span id="b_13">:</span>
+            <span id="b_14">"</span>
+            <span id="b_15">&lt</span>
+            <span id="b_16">&gt</span>
+            <span id="b_17">?</span>
+        </div>
+        <div class="row">
+            <span id="b1">1</span>
+            <span id="b2">2</span>
+            <span id="b3">3</span>
+            <span id="b4">4</span>
+            <span id="b5">5</span>
+            <span id="b6">6</span>
+            <span id="b7">7</span>
+            <span id="b8">8</span>
+            <span id="b9">9</span>
+            <span id="b0">0</span>
+            <span id="b10">[</span>
+            <span id="b11">]</span>
+            <span id="b12">\</span>
+            <span id="b13">;</span>
+            <span id="b14">'</span>
+            <span id="b15">,</span>
+            <span id="b16">.</span>
+            <span id="b17">/</span>
+        </div>
+    </div>
+    <div class="container">
+        <div id="piano">
+            <span class="w-1">&nbsp;</span>
+            <span class="w-2">&nbsp;</span>
+            <span class="w-3">&nbsp;</span>
+            <span class="w-4">&nbsp;</span>
+            <span class="w-5">&nbsp;</span>
+            <span class="w-6">&nbsp;</span>
+            <span class="w-7">&nbsp;</span>
+            <span class="w-8">&nbsp;</span>
+            <span class="w-9">&nbsp;</span>
+            <span class="w-10">&nbsp;</span>
+            <span class="w-11">&nbsp;</span>
+            <span class="w-12">&nbsp;</span>
+            <span class="w-13">&nbsp;</span>
+            <span class="w-14">&nbsp;</span>
+            <span class="w-15">&nbsp;</span>
+            <span class="w-16">&nbsp;</span>
+            <span class="w-17">&nbsp;</span>
+            <span class="w-18">&nbsp;</span>
+            <span class="w-19">&nbsp;</span>
+            <span class="w-20">&nbsp;</span>
+            <span class="w-21">&nbsp;</span>
+            <span class="w-22">&nbsp;</span>
+            <span class="w-23">&nbsp;</span>
+            <span class="w-24">&nbsp;</span>
+            <span class="w-25">&nbsp;</span>
+            <span class="w-26">&nbsp;</span>
+            <span class="w-27">&nbsp;</span>
+            <span class="w-28">&nbsp;</span>
+            <span class="w-29">&nbsp;</span>
+            <span class="w-30">&nbsp;</span>
+            <span class="w-31">&nbsp;</span>
+            <span class="w-32">&nbsp;</span>
+            <span class="w-33">&nbsp;</span>
+            <span class="w-34">&nbsp;</span>
+            <span class="w-35">&nbsp;</span>
+            <span class="w-36">&nbsp;</span>
+            <span class="w-37">&nbsp;</span>
+            <span class="w-38">&nbsp;</span>
+            <span class="w-39">&nbsp;</span>
+            <span class="w-40">&nbsp;</span>
+            <span class="w-41">&nbsp;</span>
+            <span class="w-42">&nbsp;</span>
+            <span class="w-43">&nbsp;</span>
+            <span class="w-44">&nbsp;</span>
+            <span class="w-45">&nbsp;</span>
+            <span class="w-46">&nbsp;</span>
+            <span class="w-47">&nbsp;</span>
+            <span class="w-48">&nbsp;</span>
+            <span class="w-49">&nbsp;</span>
+            <span class="w-50">&nbsp;</span>
+            <span class="w-51">&nbsp;</span>
+            <span class="w-52">&nbsp;</span>
+            <span class="b-1">&nbsp;</span>
+            <span class="b-2">&nbsp;</span>
+            <span class="b-3">&nbsp;</span>
+            <span class="b-4">&nbsp;</span>
+            <span class="b-5">&nbsp;</span>
+            <span class="b-6">&nbsp;</span>
+            <span class="b-7">&nbsp;</span>
+            <span class="b-8">&nbsp;</span>
+            <span class="b-9">&nbsp;</span>
+            <span class="b-10">&nbsp;</span>
+            <span class="b-11">&nbsp;</span>
+            <span class="b-12">&nbsp;</span>
+            <span class="b-13">&nbsp;</span>
+            <span class="b-14">&nbsp;</span>
+            <span class="b-15">&nbsp;</span>
+            <span class="b-16">&nbsp;</span>
+            <span class="b-17">&nbsp;</span>
+            <span class="b-18">&nbsp;</span>
+            <span class="b-19">&nbsp;</span>
+            <span class="b-20">&nbsp;</span>
+            <span class="b-21">&nbsp;</span>
+            <span class="b-22">&nbsp;</span>
+            <span class="b-23">&nbsp;</span>
+            <span class="b-24">&nbsp;</span>
+            <span class="b-25">&nbsp;</span>
+            <span class="b-26">&nbsp;</span>
+            <span class="b-27">&nbsp;</span>
+            <span class="b-28">&nbsp;</span>
+            <span class="b-29">&nbsp;</span>
+            <span class="b-30">&nbsp;</span>
+            <span class="b-31">&nbsp;</span>
+            <span class="b-32">&nbsp;</span>
+            <span class="b-33">&nbsp;</span>
+            <span class="b-34">&nbsp;</span>
+            <span class="b-35">&nbsp;</span>
+            <span class="b-36">&nbsp;</span>
+        </div>
+    </div>
+
+    <script src="./main.js"></script>
 </body>
+
 </html>
