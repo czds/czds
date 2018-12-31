@@ -18,6 +18,10 @@
             width: 56rem;
         }
 
+        [v-cloak] {
+            display: none !important;
+        }
+
         .white .row,
         .black .row {
             margin-top: 0.6rem;
@@ -357,7 +361,7 @@
         </div>
     </div>
     <div class="container">
-        <div id="piano">
+        <div id="piano v-cloak">
             <span class="a w-0" @click="play(w0)" :class="{active: isActive}">&nbsp;</span>
             <span class="a w-1" @click="play(w1)" :class="{active: isActive}">&nbsp;</span>
             <span class="a w-2" @click="play(w2)" :class="{active: isActive}">&nbsp;</span>
