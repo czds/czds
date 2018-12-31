@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 
 <head>
@@ -18,9 +18,9 @@
             width: 56rem;
         }
 
-        [v-cloak] {
+        /* [v-cloak] {
             display: none !important;
-        }
+        } */
 
         .white .row,
         .black .row {
@@ -361,7 +361,7 @@
         </div>
     </div>
     <div class="container">
-        <div id="piano v-cloak">
+        <div id="piano">
             <span class="a w-0" @click="play(w0)" :class="{active: isActive}">&nbsp;</span>
             <span class="a w-1" @click="play(w1)" :class="{active: isActive}">&nbsp;</span>
             <span class="a w-2" @click="play(w2)" :class="{active: isActive}">&nbsp;</span>
