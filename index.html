@@ -248,9 +248,34 @@
             margin-bottom: 24px;
         }
 
-        .text {
-            width: 20rem;
+        #content {
+            width: 36rem;
             margin: 20px auto;
+        }
+
+        #content>* {
+            vertical-align: -webkit-baseline-middle;
+        }
+
+        #go,
+        #stop {
+            padding: 0.6rem 1rem;
+            background-color: lightgreen;
+            border: none;
+            border-radius: 6px;
+            margin-left: 2.4rem;
+            font-size: 18px;
+        }
+
+        #stop {
+            margin-left: 2rem;
+        }
+
+        textarea {
+            resize: none;
+            padding: 6px;
+            border-radius: 4px;
+            outline: none;
         }
     </style>
 </head>
@@ -258,7 +283,8 @@
 <body>
     <h1>WebPiano</h1>
     <div class="desc">
-        按下键盘对应键即可听到相应钢琴音，测试中...
+        <p>按下键盘对应键即可听到相应钢琴音，play将尝试播放输入框的内容</p>
+        <p>音量、速度、声源 这些，哪天有空了再来优化 ... </p>
     </div>
     <div class="white">
         <div class="row">
@@ -330,11 +356,11 @@
             <span id="b8">8</span>
             <span id="b9">9</span>
             <span id="b0">0</span>
-            <span id="b10">[</span>
-            <span id="b11">]</span>
-            <span id="b12">\</span>
-            <span id="b13">;</span>
-            <span id="b14">'</span>
+            <span id="b10">-</span>
+            <span id="b11">[</span>
+            <span id="b12">]</span>
+            <span id="b13">\</span>
+            <span id="b14">;</span>
             <span id="b15">,</span>
             <span id="b16">.</span>
             <span id="b17">/</span>
@@ -350,11 +376,11 @@
             <span id="b_8">*</span>
             <span id="b_9">(</span>
             <span id="b_0">)</span>
-            <span id="b_10">{</span>
-            <span id="b_11">}</span>
-            <span id="b_12">|</span>
-            <span id="b_13">:</span>
-            <span id="b_14">"</span>
+            <span id="b_10">_</span>
+            <span id="b_11">{</span>
+            <span id="b_12">}</span>
+            <span id="b_13">|</span>
+            <span id="b_14">:</span>
             <span id="b_15">&lt</span>
             <span id="b_16">&gt</span>
             <span id="b_17">?</span>
@@ -452,7 +478,6 @@
             <span class="b w-87" @click="play(w87)" :class="{active: isActive}">&nbsp;</span>
         </div>
     </div>
-
     <div class="sound">
         <audio src="https://chuangzuodashi.cn//sound/1.mp3" preload="auto"></audio>
         <audio src="https://chuangzuodashi.cn//sound/2.mp3" preload="auto"></audio>
@@ -543,11 +568,10 @@
         <audio src="https://chuangzuodashi.cn//sound/87.mp3" preload="auto"></audio>
         <audio src="https://chuangzuodashi.cn//sound/88.mp3" preload="auto"></audio>
     </div>
-
-    <div class="text">
-        <textarea cols="40" rows="6" placeholder="手机浏览器的虚拟键盘无效..."></textarea>
+    <div id="content">
+        <textarea v-model.trim="content" cols="50" rows="6" placeholder="部分手机浏览器（U C）的键盘无效..."></textarea>
+        <button id="go" @click='play'>play</button><button id="stop" @click='stop'>stop</button>
     </div>
-
     <script src="./main.js"></script>
 </body>
 
