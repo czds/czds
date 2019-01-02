@@ -37,9 +37,9 @@ for (let i = 0; i < 88; i++) {
     })
 };
 
-document.addEventListener('keydown', e => {
+document.addEventListener('input', e => {
     // console.log(e.keyCode + ',', 'Ctrl: ' + e.ctrlKey, 'Alt: ' + e.altKey, 'Shift: ' + e.shiftKey);
-    switch (e.key) {
+    switch (e.data) {
         case 'a': play(w0); show(white[0]);
             break;
         case 'b': play(w1); show(white[1]);
